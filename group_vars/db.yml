@@ -1,8 +1,9 @@
+---
 ########################
 # システム固有パラメータ
 ########################
 
-# インストールバージョン
+# ソフトウェアバージョン
 postgresql_version: "10.6-1"
 
 # 管理対象DBユーザ
@@ -14,10 +15,6 @@ postgresql_dbuser:
 postgresql_db:
   - name: "sample_db1"
   - name: "sample_db2"
-
-# ディレクトリ構成
-postgresql_homedir: "/var/lib/pgsql"
-postgresql_datadir: "{{ postgresql_homedir }}/data"
 
 # postgresql.confパラメータ
 postgresql_conf:
@@ -36,5 +33,3 @@ postgresql_conf:
   log_filename: "postgresql-%Y%m%d.log"
   log_trancate_on_rotation: "on"
   log_rotation_age: "1d"
-
-    
