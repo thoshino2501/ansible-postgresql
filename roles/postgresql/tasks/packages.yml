@@ -1,0 +1,5 @@
+---
+- name: "インストールパッケージ"
+  yum:
+    name: "{{ postgresql_packages }}"
+    state: present
