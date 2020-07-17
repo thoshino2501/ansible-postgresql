@@ -15,6 +15,10 @@ postgresql_db:
   - name: "sample_db1"
   - name: "sample_db2"
 
+# ディレクトリ構成
+postgresql_homedir: "/var/lib/pgsql"
+postgresql_datadir: "{{ postgresql_homedir }}/data"
+
 # postgresql.confパラメータ
 postgresql_conf:
   # 接続設定
