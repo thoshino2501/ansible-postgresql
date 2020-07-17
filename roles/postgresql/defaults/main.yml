@@ -1,0 +1,14 @@
+---
+########################
+# システム固有パラメータ
+########################
+
+# インストールパッケージ
+postgresql_packages:
+  - "postgresql-{{ postgresql_version }}"
+  - "postgresql-server-{{ postgresql_version }}"
+  - "postgresql-libs-{{ postgresql_version }}"
+
+# ディレクトリ構成
+postgresql_homedir: "/var/lib/pgsql"
+postgresql_datadir: "{{ postgresql_homedir }}/data"
