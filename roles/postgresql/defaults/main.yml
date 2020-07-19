@@ -4,6 +4,7 @@
 ########################
 
 # インストールパッケージ
+postgresql_version: "*"
 postgresql_packages:
   - "postgresql-{{ postgresql_version }}"
   - "postgresql-server-{{ postgresql_version }}"
