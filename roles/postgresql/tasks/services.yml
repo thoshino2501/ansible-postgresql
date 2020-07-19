@@ -1,0 +1,6 @@
+---
+- name: "サービス起動"
+  systemd:
+    name: "postgresql.service"
+    state: "started"
+    enabled: yes
