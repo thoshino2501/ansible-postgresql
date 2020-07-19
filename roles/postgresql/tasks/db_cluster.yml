@@ -1,7 +1,7 @@
 ---
 - name: "Ansible tmpディレクトリ作成"
   file:
-    path: "{{ postgresql_homedir }}/.ansible"
+    path: "{{ postgresql_homedir }}/.ansible/tmp"
     state: "directory"
     owner: "postgres"
     group: "postgres"
