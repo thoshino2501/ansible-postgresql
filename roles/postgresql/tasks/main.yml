@@ -4,7 +4,7 @@
 
 - name: "DBクラスタ存在確認"
   stat:
-    path: "{{ postgresql_datadir }}"
+    path: "{{ postgresql_datadir }}/PG_VERSION"
   register: check_result
 
 - name: "DBクラスタ作成"
