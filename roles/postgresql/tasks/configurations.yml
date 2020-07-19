@@ -1,0 +1,27 @@
+---
+- name: "ログディレクトリ"
+  file:
+    path: "{{ postgresql_logdir }}"
+    state: "directory"
+    owner: "postgres"
+    group: "postgres"
+    mode: "0755"
+  notify: "restart_postgresql"
+
+- name: "設定ファイル(postgresql.conf)"
+  template:
+    src: "postgresql.conf.j2"
+    dest: "{{ postgresql_datadir }}/postgresql.conf"
+    owner: "postgres"
+    group: "postgres"
+    mode: "0600"
+  notify: "restart_postgresql"
+
+- name: "設定ファイル(pg_hba.conf)"
+  template:
+    src: "pg_hba.conf.j2"
+    dest: "{{ postgresql_datadir }}/pg_hba.conf"
+    owner: "postgres"
+    group: "postgres"
+    mode: "0600"
+  notify: "restart_postgresql"
