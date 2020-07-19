@@ -1,6 +1,6 @@
 ---
 ########################
-# システム固有パラメータ
+# デフォルトパラメータ
 ########################
 
 # インストールパッケージ
@@ -13,3 +13,6 @@ postgresql_packages:
 # ディレクトリ構成
 postgresql_homedir: "/var/lib/pgsql"
 postgresql_datadir: "{{ postgresql_homedir }}/data"
+
+# ファイアウォール使用有無
+postgresql_firewalld_is_enabled: yes

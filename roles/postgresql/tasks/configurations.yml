@@ -25,3 +25,10 @@
     group: "postgres"
     mode: "0600"
   notify: "restart_postgresql"
+
+- name: "ファイアウォール許可設定"
+  firewalld:
+    service: postgresql
+    permanent: yes
+    state: enabled
+  when: postgresql_firewalld_is_enabled
