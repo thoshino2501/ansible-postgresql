@@ -6,7 +6,14 @@
     owner: "postgres"
     group: "postgres"
     mode: "0755"
-  notify: "restart_postgresql"
+
+- name: "バックアップディレクトリ"
+  file:
+    path: "{{ postgresql_backupdir }}"
+    state: "directory"
+    owner: "postgres"
+    group: "postgres"
+    mode: "0755"
 
 - name: "設定ファイル(postgresql.conf)"
   template:
