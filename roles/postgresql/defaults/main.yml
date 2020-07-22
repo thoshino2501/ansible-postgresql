@@ -13,6 +13,52 @@ postgresql_packages:
 # ディレクトリ構成
 postgresql_homedir: "/var/lib/pgsql"
 postgresql_datadir: "{{ postgresql_homedir }}/data"
+postgresql_logdir: "/var/log/pgsql"
+postgresql_backupdir: "/dbbackup"
 
 # ファイアウォール使用有無
 postgresql_firewalld_is_enabled: yes
+
+# postgresql.confパラメータ
+postgresql_conf:
+  # 接続設定
+  listen_addresses: "*"
+  port: "5432"
+  max_connections: "100"
+  superuser_reserved_connections: "10"
+
+  # パフォーマンス設定
+  shared_buffers: "256MB"
+  work_mem: "16MB"
+  maintenance_work_mem: "64MB"
+  dynamic_shared_memory_type: "posix"
+
+  # WAL設定
+  wal_level: "replica"
+  archive_mode: "on"
+  archive_command: "cp %p {{ postgresql_backupdir }}/%f"
+
+  # ログ設定
+  logging_collector: "on"
+  log_destination: "stderr"
+  log_directory: "{{ postgresql_logdir }}"
+  log_filename: "postgresql-%Y%m%d.log"
+  log_trancate_on_rotation: "on"
+  log_rotation_age: "1d"
+  log_rotation_size: "0"
+  log_min_duration_statement: "10000"
+  log_checkpoints: "on"
+  log_connections: "on"
+  log_disconnections: "on"
+  log_duration: "on"
+  log_line_prefix: "[%m]%u %d %p[%l] "
+  log_timezone: "Japan"
+
+  # クライアント接続設定
+  datestyle: "iso, ymd"
+  timezone: "Japan"
+  lc_messages: "ja_JP.UTF-8"
+  lc_monetary: "ja_JP.UTF-8"
+  lc_numeric: "ja_JP.UTF-8"
+  lc_time: "ja_JP.UTF-8"
+  default_text_search_config: "pg_catalog.simple"
