@@ -9,7 +9,13 @@ postgresql_version: "10.6-1"
 # 管理対象DBユーザ
 postgresql_dbuser:
   - name: "sample_user1"
+    db: "sambple_db1"
+    addr: "192.168.0.0/24"
+    method: "md5"
   - name: "sample_user2"
+    db: "sambple_db2"
+    addr: "192.168.0.0/24"
+    method: "md5"
 
 # 管理対象DB
 postgresql_db:
