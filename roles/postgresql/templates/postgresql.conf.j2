@@ -1,41 +1,41 @@
 # 接続設定
-listen_addresses = '{{ listen_addresses }}'
-port = {{ port }}
-max_connections = {{ max_connections }}
-superuser_reserved_connections = {{ superuser_reserved_connections }}
+listen_addresses = '{{ postgresql_conf.listen_addresses }}'
+port = {{ postgresql_conf.port }}
+max_connections = {{ postgresql_conf.max_connections }}
+superuser_reserved_connections = {{ postgresql_conf.superuser_reserved_connections }}
 
 # パフォーマンス設定
-shared_buffers = {{ shared_buffers }}
-work_mem = {{ work_mem }}
-maintenance_work_mem = {{ maintenance_work_mem }}
-dynamic_shared_memory_type = {{ dynamic_shared_memory_type }}
+shared_buffers = {{ postgresql_conf.shared_buffers }}
+work_mem = {{ postgresql_conf.work_mem }}
+maintenance_work_mem = {{ postgresql_conf.maintenance_work_mem }}
+dynamic_shared_memory_type = {{ postgresql_conf.dynamic_shared_memory_type }}
 
 # WAL設定
-wal_level = {{ wal_level }}
-archive_mode = {{ archive_mode }}
-archive_command = {{ archive_command }}
+wal_level = {{ postgresql_conf.wal_level }}
+archive_mode = {{ postgresql_conf.archive_mode }}
+archive_command = {{ postgresql_conf.archive_command }}
 
 # ログ設定
-logging_collector = {{ logging_collector }}
-log_destination = '{{ log_destination }}'
-log_directory = '{{ log_directory }}'
-log_filename = '{{ log_filename }}'
-log_trancate_on_rotation = {{ log_trancate_on_rotation }}
-log_rotation_age = {{ log_rotation_age }}
-log_rotation_size = {{ log_rotation_size }}
-log_min_duration_statement = {{ log_min_duration_statement }}
-log_checkpoints = {{ log_checkpoints }}
-log_connections = {{ log_connections }}
-log_disconnections = {{ log_disconnections }}
-log_duration = {{ log_duration }}
-log_line_prefix = '{{ log_line_prefix }}'
-log_timezone = '{{ log_timezone }}'
+logging_collector = {{ postgresql_conf.logging_collector }}
+log_destination = '{{ postgresql_conf.log_destination }}'
+log_directory = '{{ postgresql_conf.log_directory }}'
+log_filename = '{{ postgresql_conf.log_filename }}'
+log_trancate_on_rotation = {{ postgresql_conf.log_trancate_on_rotation }}
+log_rotation_age = {{ postgresql_conf.log_rotation_age }}
+log_rotation_size = {{ postgresql_conf.log_rotation_size }}
+log_min_duration_statement = {{ postgresql_conf.log_min_duration_statement }}
+log_checkpoints = {{ postgresql_conf.log_checkpoints }}
+log_connections = {{ postgresql_conf.log_connections }}
+log_disconnections = {{ postgresql_conf.log_disconnections }}
+log_duration = {{ postgresql_conf.log_duration }}
+log_line_prefix = '{{ postgresql_conf.log_line_prefix }}'
+log_timezone = '{{ postgresql_conf.log_timezone }}'
 
 # クライアント接続設定
-datestyle = '{{ datestyle }}'
-timezone = '{{ timezone }}'
-lc_messages = '{{ lc_messages }}'
-lc_monetary = '{{ lc_monetary }}'
-lc_numeric = '{{ lc_numeric }}'
-lc_time = '{{ lc_time }}'
-default_text_search_config = '{{ default_text_search_config }}'
+datestyle = '{{ postgresql_conf.datestyle }}'
+timezone = '{{ postgresql_conf.timezone }}'
+lc_messages = '{{ postgresql_conf.lc_messages }}'
+lc_monetary = '{{ postgresql_conf.lc_monetary }}'
+lc_numeric = '{{ postgresql_conf.lc_numeric }}'
+lc_time = '{{ postgresql_conf.lc_time }}'
+default_text_search_config = '{{ postgresql_conf.default_text_search_config }}'
