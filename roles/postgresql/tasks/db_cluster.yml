@@ -1,18 +1,3 @@
 ---
-- name: "Ansible tmpディレクトリ作成"
-  file:
-    path: "{{ postgresql_homedir }}/.ansible/tmp"
-    state: "directory"
-    owner: "postgres"
-    group: "postgres"
-    mode: "0700"
-
 - name: "DBクラスタの初期化"
-  shell: "/bin/initdb -D {{ postgresql_datadir }} --encoding=UTF-8 --no-locale"
-  become: yes
-  become_user: "postgres"
-
-- name: "Ansible tmpディレクトリ削除"
-  file:
-    path: "{{ postgresql_homedir }}/.ansible
-    state: "absent"
+  shell: "/bin/sudo -u postgres /bin/initdb -D {{ postgresql_datadir }} --encoding=UTF-8 --no-locale"
