@@ -4,7 +4,7 @@
 ########################
 
 # ソフトウェアバージョン
-postgresql_version: "10.6-1"
+postgresql_version: "10.6"
 
 # 管理対象DBユーザ
 postgresql_dbuser:
