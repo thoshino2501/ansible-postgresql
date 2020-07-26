@@ -10,3 +10,9 @@ db02 ansible_host=192.168.0.2
 [db]
 db01
 db02
+
+# 接続情報
+[all:vars]
+ansible_user=ansible
+# ansible_password=samplepass
+# ansible_become_pass=samplepass
