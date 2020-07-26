@@ -1,3 +1,7 @@
 ---
 - name: "DBクラスタの初期化"
-  shell: "/bin/sudo -u postgres /bin/initdb -D {{ postgresql_datadir }} --encoding=UTF-8 --no-locale"
+  shell: "/bin/postgresql-setup initdb"
+  environment:
+    PGSETUP_INITDB_OPTIONS: "-D {{ postgresql_datadir }} --encoding=UTF-8 --no-locale"
+  args:
+    creates: "{{ postgresql_datadir }}/PG_VERSION"

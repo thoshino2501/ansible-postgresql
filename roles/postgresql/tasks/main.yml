@@ -2,14 +2,8 @@
 - name: "パッケージ管理"
   import_tasks: packages.yml
 
-- name: "DBクラスタ存在確認"
-  stat:
-    path: "{{ postgresql_datadir }}/PG_VERSION"
-  register: check_result
-
 - name: "DBクラスタ作成"
   import_tasks: db_cluster.yml
-  when: not check_result.stat.exists
 
 - name: "設定ファイル管理"
   import_tasks: configurations.yml
