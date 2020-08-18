@@ -13,7 +13,7 @@ dynamic_shared_memory_type = {{ postgresql_conf.dynamic_shared_memory_type }}
 # WAL設定
 wal_level = {{ postgresql_conf.wal_level }}
 archive_mode = {{ postgresql_conf.archive_mode }}
-archive_command = {{ postgresql_conf.archive_command }}
+archive_command = '{{ postgresql_conf.archive_command }}'
 
 # ログ設定
 logging_collector = {{ postgresql_conf.logging_collector }}
