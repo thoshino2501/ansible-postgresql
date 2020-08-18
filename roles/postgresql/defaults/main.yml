@@ -42,7 +42,7 @@ postgresql_conf:
   log_destination: "stderr"
   log_directory: "{{ postgresql_logdir }}"
   log_filename: "postgresql-%Y%m%d.log"
-  log_trancate_on_rotation: "on"
+  log_truncate_on_rotation: "on"
   log_rotation_age: "1d"
   log_rotation_size: "0"
   log_min_duration_statement: "10000"
